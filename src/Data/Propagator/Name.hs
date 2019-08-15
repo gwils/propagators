@@ -18,8 +18,9 @@ import Control.Monad.Primitive
 import Data.Bits
 import Data.Hashable
 import Data.String
-import GHC.Prim
-import System.Mem.StableName
+import GHC.Prim (unsafeCoerce#)
+import GHC.Types (Any)
+import System.Mem.StableName (StableName, hashStableName, makeStableName)
 
 data Name
   = U {-# UNPACK #-} !Unique
